@@ -64,9 +64,13 @@ class DbHelper {
     return result;
   }
 
+  Future<int> updateNote(Note note) async {
+    final db = await instance.database;
 
-
-
+    var result = await db.update(tblNote, note.toJson(),
+        where: "$colId = ?", whereArgs: [note.id]);
+    return result;
+  }
 
   Future<int> deleteNote(int id) async {
     final db = await instance.database;
