@@ -210,9 +210,19 @@ class _NoteActionState extends State<NoteAction> {
   void updatePriority(String value) {
     int priority = 0;
 
-
-
-
+    switch (value) {
+      case "High":
+        priority = 1;
+        break;
+      case "Medium":
+        priority = 2;
+        break;
+      case "Low":
+        priority = 3;
+        break;
+      default:
+        priority = 3;
+    }
 
     setState(() {
       note.priority = priority;
