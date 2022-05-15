@@ -16,11 +16,9 @@ class _NoteListState extends State<NoteList> {
   List<Note> notes = [];
   int count = 0;
 
-  @override
-  void initState() {
-    super.initState();
-    getData();
-  }
+
+
+
 
   void getData() {
     final notesFuture = helper.getNotes();
