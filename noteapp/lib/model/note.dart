@@ -13,18 +13,12 @@ class Note {
   Note.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     title = json['title'];
-
-
-
+    description = json['description'];
+    date = json['date'];
+    priority = json['priority'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['id'] = id;
-    data['title'] = title;
-    data['description'] = description;
-    data['date'] = date;
-    data['priority'] = priority;
-    return data;
-  }
+
+
+
 }
