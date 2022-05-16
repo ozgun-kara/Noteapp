@@ -1,7 +1,9 @@
 class Note {
   int? id;
   String? title;
-
+  String? description;
+  String? date;
+  int? priority;
 
   Note(this.title, this.priority, this.date, [this.description]);
 
@@ -11,9 +13,9 @@ class Note {
   Note.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     title = json['title'];
-    description = json['description'];
-    date = json['date'];
-    priority = json['priority'];
+
+
+
   }
 
   Map<String, dynamic> toJson() {
