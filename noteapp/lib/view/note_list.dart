@@ -16,9 +16,11 @@ class _NoteListState extends State<NoteList> {
   List<Note> notes = [];
   int count = 0;
 
-
-
-
+  @override
+  void initState() {
+    super.initState();
+    getData();
+  }
 
   void getData() {
     final notesFuture = helper.getNotes();
@@ -117,16 +119,7 @@ class _NoteListState extends State<NoteList> {
     }
   }
 
-  Color getColor(int priority) {
-    switch (priority) {
-      case 1:
-        return Colors.black45;
-      case 2:
-        return Colors.blueGrey.shade400;
-      case 3:
-        return Colors.black12;
-      default:
-        return Colors.blueGrey.shade400;
-    }
-  }
+
+
+
 }
