@@ -1,4 +1,6 @@
 
+import 'package:flutter/material.dart';
+import 'package:noteapp/view/note_action.dart';
 
 
 class NoteList extends StatefulWidget {
