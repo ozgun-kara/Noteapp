@@ -4,8 +4,6 @@ import '../model/note.dart';
 
 class DbHelper {
 
-
-
   static final DbHelper instance = DbHelper._init();
   DbHelper._init();
   static Database? _database;
