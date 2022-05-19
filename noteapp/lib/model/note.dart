@@ -10,13 +10,9 @@ class Note {
   Note.withId(this.id, this.title, this.priority, this.date,
       [this.description]);
 
-  Note.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    title = json['title'];
-    description = json['description'];
-    date = json['date'];
-    priority = json['priority'];
-  }
+
+
+
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
