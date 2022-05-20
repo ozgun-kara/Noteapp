@@ -12,9 +12,7 @@ class NoteList extends StatefulWidget {
 }
 
 class _NoteListState extends State<NoteList> {
-  DbHelper helper = DbHelper.instance;
-  List<Note> notes = [];
-  int count = 0;
+
 
   @override
   void initState() {
