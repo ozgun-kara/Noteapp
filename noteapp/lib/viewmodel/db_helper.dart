@@ -4,6 +4,9 @@ import '../model/note.dart';
 
 class DbHelper {
 
+  String tblNote = "note";
+  String colId = "id";
+  String colTitle = "title";
 
 
   static final DbHelper instance = DbHelper._init();
