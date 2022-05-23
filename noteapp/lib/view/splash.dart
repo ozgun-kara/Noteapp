@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-
-
+import 'package:flutter/services.dart';
+import 'package:noteapp/view/note_list.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({Key? key}) : super(key: key);
@@ -14,18 +14,7 @@ class _SplashViewState extends State<SplashView> {
   double? deviceWidth;
   double? deviceHeight;
 
-  @override
-  void initState() {
-    super.initState();
 
-    // THIS FUNCTION MAKES THE SPLASH SCREEN APPEAR FOR AT LEAST 4.5 SECONDS.
-    Timer(
-        const Duration(milliseconds: 4500),
-        () => Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (BuildContext context) {
-              return const NoteList();
-            })));
-  }
 
   @override
   Widget build(BuildContext context) {
