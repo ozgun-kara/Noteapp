@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 
+
 class SplashView extends StatefulWidget {
   const SplashView({Key? key}) : super(key: key);
 
