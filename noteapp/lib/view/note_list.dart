@@ -18,7 +18,12 @@ class _NoteListState extends State<NoteList> {
   List<Note> notes = [];
   int count = 0;
 
-
+  @override
+  void initState() {
+    super.initState();
+    getData();
+  }
+  
 
   void getData() {
     final notesFuture = helper.getNotes();
@@ -109,13 +114,9 @@ class _NoteListState extends State<NoteList> {
     );
   }
 
-  void navigateToDetails(Note note) async {
-    bool result = await Navigator.push(context,
-        MaterialPageRoute(builder: ((context) => NoteAction(note: note))));
-    if (result) {
-      getData();
-    }
-  }
+
+
+
 
   Color getColor(int priority) {
     switch (priority) {
