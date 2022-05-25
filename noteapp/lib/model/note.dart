@@ -1,9 +1,7 @@
 class Note {
   int? id;
   String? title;
-  String? description;
-  String? date;
-  int? priority;
+
 
   Note(this.title, this.priority, this.date, [this.description]);
 
