@@ -18,14 +18,6 @@ class Note {
     priority = json['priority'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['id'] = id;
-    data['title'] = title;
-    data['description'] = description;
-    data['date'] = date;
-    data['priority'] = priority;
-    return data;
-  }
+
 
 }
