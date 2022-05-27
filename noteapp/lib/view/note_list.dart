@@ -5,12 +5,7 @@ import 'package:noteapp/viewmodel/db_helper.dart';
 import '../model/note.dart';
 
 
-class NoteList extends StatefulWidget {
-  const NoteList({Key? key}) : super(key: key);
 
-  @override
-  State<NoteList> createState() => _NoteListState();
-}
 
 class _NoteListState extends State<NoteList> {
 
