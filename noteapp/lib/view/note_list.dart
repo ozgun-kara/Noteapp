@@ -21,6 +21,10 @@ class _NoteListState extends State<NoteList> {
 
   
 
+
+
+
+
   void getData() {
     final notesFuture = helper.getNotes();
     notesFuture.then((result) {
