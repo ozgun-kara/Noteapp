@@ -101,9 +101,17 @@ class _NoteListState extends State<NoteList> {
           )),
 
 
-
-
-
+      floatingActionButton: FloatingActionButton(
+          splashColor: Colors.blue.shade900,
+          backgroundColor: Colors.black45.withOpacity(0.8),
+          child: const Icon(
+            Icons.add,
+            color: Color.fromRGBO(230, 230, 240, 1),
+            size: 35,
+          ),
+          onPressed: () {
+            navigateToDetails(Note("", 3, ""));
+          }),
 
     );
   }
