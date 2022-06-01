@@ -115,8 +115,13 @@ class _NoteListState extends State<NoteList> {
     );
   }
 
-
-
+  void navigateToDetails(Note note) async {
+    bool result = await Navigator.push(context,
+        MaterialPageRoute(builder: ((context) => NoteAction(note: note))));
+    if (result) {
+      getData();
+    }
+  }
 
   Color getColor(int priority) {
     switch (priority) {
