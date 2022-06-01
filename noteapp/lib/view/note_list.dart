@@ -1,5 +1,7 @@
-
-
+import 'package:flutter/material.dart';
+import 'package:noteapp/view/note_action.dart';
+import 'package:noteapp/viewmodel/db_helper.dart';
+import '../model/note.dart';
 
 class NoteList extends StatefulWidget {
   const NoteList({Key? key}) : super(key: key);
@@ -113,13 +115,7 @@ class _NoteListState extends State<NoteList> {
     );
   }
 
-  void navigateToDetails(Note note) async {
-    bool result = await Navigator.push(context,
-        MaterialPageRoute(builder: ((context) => NoteAction(note: note))));
-    if (result) {
-      getData();
-    }
-  }
+
 
   Color getColor(int priority) {
     switch (priority) {
