@@ -56,7 +56,14 @@ class DbHelper {
     return noteList;
   }
 
+  Future<int?> getCount() async {
+    final db = await instance.database;
 
+    var result = Sqflite.firstIntValue(
+        await db.rawQuery("SELECT COUNT(*) FROM $tblNote"));
+
+    return result;
+  }
 
   Future<int> updateNote(Note note) async {
     final db = await instance.database;
