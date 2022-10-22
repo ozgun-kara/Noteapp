@@ -23,15 +23,7 @@ class _NoteListState extends State<NoteList> {
     getData();
   }
   
-  void getData() {
-    final notesFuture = helper.getNotes();
-    notesFuture.then((result) {
-      setState(() {
-        notes = result as List<Note>;
-        count = notes.length;
-      });
-    });
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -123,6 +115,17 @@ class _NoteListState extends State<NoteList> {
     }
   }
 
-
+  Color getColor(int priority) {
+    switch (priority) {
+      case 1:
+        return Colors.black45;
+      case 2:
+        return Colors.blueGrey.shade400;
+      case 3:
+        return Colors.black12;
+      default:
+        return Colors.blueGrey.shade400;
+    }
+  }
 
 }
