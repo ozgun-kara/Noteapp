@@ -1,4 +1,8 @@
-
+import 'dart:ui';
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:noteapp/model/note.dart';
+import 'package:noteapp/viewmodel/db_helper.dart';
 
 DbHelper helper = DbHelper.instance;
 
@@ -80,33 +84,10 @@ class _NoteActionState extends State<NoteAction> {
                   ),
                 ),
               ),
-              Padding(
-                // padding:
-                //     EdgeInsets.only(top: _formDistance, bottom: _formDistance),
-                padding: const EdgeInsets.fromLTRB(8, 10, 8, 10),
-                child: TextField(
-                  controller: descController,
-                  keyboardType: TextInputType.multiline,
-                  maxLines: 10,
-                  style: const TextStyle(
-                      fontSize: 20, color: Color.fromRGBO(10, 10, 10, 0.8)),
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white.withOpacity(0.4),
-                    hintText: 'Note',
-                    contentPadding: const EdgeInsets.only(
-                        left: 14.0, bottom: 8.0, top: 8.0),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.white24),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.white),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                ),
-              ),
+
+
+
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
