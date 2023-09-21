@@ -176,32 +176,10 @@ class _NoteActionState extends State<NoteAction> {
                       }),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                child: ButtonTheme(
-                  minWidth: 145,
-                  height: 45,
-                  child: MaterialButton(
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(12),
-                              topRight: Radius.circular(12),
-                              bottomLeft: Radius.circular(12),
-                              bottomRight: Radius.circular(12)),
-                          side: BorderSide(
-                            color: Color.fromRGBO(250, 65, 60, 0.8),
-                          )),
-                      color: const Color.fromRGBO(250, 25, 10, 0.8),
-                      child: const Text("Delete",
-                          style: TextStyle(
-                            color: Color.fromRGBO(250, 250, 250, 1),
-                            fontSize: 15,
-                          )),
-                      onPressed: () async {
-                        delete();
-                      }),
-                ),
-              ),
+
+
+
+
             ],
           ),
         ),
