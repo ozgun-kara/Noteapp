@@ -30,8 +30,18 @@ class DbHelper {
     return dbNotes;
   }
 
+  void _createDb(Database db, int newVersion) async {
+    await db.execute(
+        "CREATE TABLE $tblNote($colId INTEGER PRIMARY KEY AUTOINCREMENT, $colTitle TEXT,"
+        "$colDescription TEXT, $colPriority INTEGER, $colDate TEXT"
+        ")");
+  }
 
-
+  Future<int> insertNote(Note note) async {
+    final db = await instance.database;
+    var result = await db.insert(tblNote, note.toJson());
+    return result;
+  }
 
   Future<List> getNotes() async {
     List<Note> noteList = [];
