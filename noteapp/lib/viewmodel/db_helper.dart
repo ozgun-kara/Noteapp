@@ -1,6 +1,3 @@
-import 'package:path/path.dart';
-import 'package:sqflite/sqflite.dart';
-import '../model/note.dart';
 
 class DbHelper {
 
