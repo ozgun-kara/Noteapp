@@ -15,7 +15,20 @@ class DbHelper {
   DbHelper._init();
   static Database? _database;
 
+  Future<Database> get database async {
+    if (_database != null) return _database!;
 
+    _database = await initializeDb('notes.db');
+
+    return _database!;
+  }
+
+  Future<Database> initializeDb(String filePath) async {
+    final dbPath = await getDatabasesPath();
+    final path = join(dbPath, filePath);
+    var dbNotes = openDatabase(path, version: 1, onCreate: _createDb);
+    return dbNotes;
+  }
 
   void _createDb(Database db, int newVersion) async {
     await db.execute(
