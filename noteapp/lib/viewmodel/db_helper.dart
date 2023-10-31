@@ -23,12 +23,7 @@ class DbHelper {
     return _database!;
   }
 
-  Future<Database> initializeDb(String filePath) async {
-    final dbPath = await getDatabasesPath();
-    final path = join(dbPath, filePath);
-    var dbNotes = openDatabase(path, version: 1, onCreate: _createDb);
-    return dbNotes;
-  }
+
 
   void _createDb(Database db, int newVersion) async {
     await db.execute(
