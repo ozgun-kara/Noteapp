@@ -4,7 +4,12 @@ import '../model/note.dart';
 
 class DbHelper {
 
-
+  String tblNote = "note";
+  String colId = "id";
+  String colTitle = "title";
+  String colDescription = "description";
+  String colPriority = "priority";
+  String colDate = "date";
 
   static final DbHelper instance = DbHelper._init();
   DbHelper._init();
