@@ -23,7 +23,15 @@ class _NoteListState extends State<NoteList> {
     getData();
   }
   
-
+  void getData() {
+    final notesFuture = helper.getNotes();
+    notesFuture.then((result) {
+      setState(() {
+        notes = result as List<Note>;
+        count = notes.length;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
