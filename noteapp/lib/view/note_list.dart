@@ -100,7 +100,17 @@ class _NoteListState extends State<NoteList> {
           )),
 
 
-
+      floatingActionButton: FloatingActionButton(
+          splashColor: Colors.blue.shade900,
+          backgroundColor: Colors.black45.withOpacity(0.8),
+          child: const Icon(
+            Icons.add,
+            color: Color.fromRGBO(230, 230, 240, 1),
+            size: 35,
+          ),
+          onPressed: () {
+            navigateToDetails(Note("", 3, ""));
+          }),
 
     );
   }
@@ -113,18 +123,7 @@ class _NoteListState extends State<NoteList> {
     }
   }
 
-  Color getColor(int priority) {
-    switch (priority) {
-      case 1:
-        return Colors.black45;
-      case 2:
-        return Colors.blueGrey.shade400;
-      case 3:
-        return Colors.black12;
-      default:
-        return Colors.blueGrey.shade400;
-    }
-  }
+
 
 
 }
