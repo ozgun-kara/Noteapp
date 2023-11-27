@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:noteapp/view/note_action.dart';
+import 'package:noteapp/viewmodel/db_helper.dart';
+import '../model/note.dart';
 
 class NoteList extends StatefulWidget {
   const NoteList({Key? key}) : super(key: key);
