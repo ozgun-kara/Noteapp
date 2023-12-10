@@ -38,9 +38,23 @@ class DbHelper {
   }
 
 
+  Future<int> insertNote(Note note) async {
+    final db = await instance.database;
+    var result = await db.insert(tblNote, note.toJson());
+    return result;
+  }
 
+  Future<List> getNotes() async {
+    List<Note> noteList = [];
+    final db = await instance.database;
 
-
+    var result =
+        await db.rawQuery("SELECT * FROM $tblNote ORDER BY $colDate ASC");
+    for (var element in result) {
+      noteList.add(Note.fromJson(element));
+    }
+    return noteList;
+  }
 
   Future<int?> getCount() async {
     final db = await instance.database;
