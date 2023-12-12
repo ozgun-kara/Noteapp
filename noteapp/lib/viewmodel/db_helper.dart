@@ -23,7 +23,12 @@ class DbHelper {
     return _database!;
   }
 
-
+  Future<Database> initializeDb(String filePath) async {
+    final dbPath = await getDatabasesPath();
+    final path = join(dbPath, filePath);
+    var dbNotes = openDatabase(path, version: 1, onCreate: _createDb);
+    return dbNotes;
+  }
 
   void _createDb(Database db, int newVersion) async {
     await db.execute(
@@ -60,17 +65,5 @@ class DbHelper {
     return result;
   }
 
-  Future<int> updateNote(Note note) async {
-    final db = await instance.database;
 
-    var result = await db.update(tblNote, note.toJson(),
-        where: "$colId = ?", whereArgs: [note.id]);
-    return result;
-  }
-
-  Future<int> deleteNote(int id) async {
-    final db = await instance.database;
-    var result = await db.delete(tblNote, where: "$colId = ?", whereArgs: [id]);
-    return result;
-  }
 }
