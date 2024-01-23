@@ -4,6 +4,12 @@ import '../model/note.dart';
 
 class DbHelper {
 
+  String tblNote = "note";
+  String colId = "id";
+  String colTitle = "title";
+  String colDescription = "description";
+  String colPriority = "priority";
+  String colDate = "date";
 
   static final DbHelper instance = DbHelper._init();
   DbHelper._init();
@@ -17,19 +23,7 @@ class DbHelper {
     return _database!;
   }
 
-  Future<Database> initializeDb(String filePath) async {
-    final dbPath = await getDatabasesPath();
-    final path = join(dbPath, filePath);
-    var dbNotes = openDatabase(path, version: 1, onCreate: _createDb);
-    return dbNotes;
-  }
 
-  void _createDb(Database db, int newVersion) async {
-    await db.execute(
-        "CREATE TABLE $tblNote($colId INTEGER PRIMARY KEY AUTOINCREMENT, $colTitle TEXT,"
-        "$colDescription TEXT, $colPriority INTEGER, $colDate TEXT"
-        ")");
-  }
 
 
   Future<int> insertNote(Note note) async {
