@@ -60,30 +60,7 @@ class _NoteActionState extends State<NoteAction> {
           padding: const EdgeInsets.all(5.0),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(8, 20, 8, 10),
-                child: TextField(
-                  controller: titleController,
-                  keyboardType: TextInputType.text,
-                  style: const TextStyle(
-                      fontSize: 20, color: Color.fromRGBO(10, 10, 10, 0.8)),
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white.withOpacity(0.4),
-                    hintText: 'Title',
-                    contentPadding: const EdgeInsets.only(
-                        left: 14.0, bottom: 8.0, top: 8.0),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.white24),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.white),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                ),
-              ),
+
 
               Padding(
                 // padding:
